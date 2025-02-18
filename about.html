@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Datalis - Transforming Data Analysis">
+    <title>About - Datalis</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/about.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+</head>
+<body>
+    <!-- Updated Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="/" class="logo-section">
+                <img src="images/Screenshot 2025-02-03 121416.png" alt="Datalis Logo" class="logo-image">
+            </a>
+
+            <div class="nav-center">
+                <a href="index.html" class="active">Home</a>
+                <a href="index.html#Features">Features</a>
+                <a href="about.html">About</a>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-login" id="loginBtn">Log In</button>
+                <button class="btn btn-register" id="signupBtn">Register Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="hero-content">
+            <h1>Transforming Data Analysis</h1>
+            <p>We're on a mission to democratize data science and make advanced analytics accessible to everyone.</p>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section class="vision-mission">
+        <div class="content-wrapper">
+            <div class="vision-card">
+                <div class="card-content">
+                    <span class="tag">Our Vision</span>
+                    <h2>Making Data Analysis Accessible</h2>
+                    <p>We envision a world where every organization, regardless of size or technical expertise, can harness the power of data analytics to drive growth and innovation.</p>
+                    <ul class="vision-points">
+                        <li>Democratizing Data Science</li>
+                        <li>Empowering Decision Making</li>
+                        <li>Driving Innovation</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mission-card">
+                <div class="card-content">
+                    <span class="tag">Our Mission</span>
+                    <h2>Simplifying Complex Data Operations</h2>
+                    <p>Our mission is to provide intuitive tools that transform complex data operations into simple, actionable insights for businesses worldwide.</p>
+                    <div class="mission-stats">
+                        <div class="stat">
+                            <span class="number">50K+</span>
+                            <span class="label">Active Users</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">100M+</span>
+                            <span class="label">Processed Records</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">98%</span>
+                            <span class="label">Success Rate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="section-header">
+            <h2>Meet Our Team</h2>
+            <p>Passionate individuals driving innovation in data analytics</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="images/team/mk1-removebg-preview.png" alt="John Smith">
+                </div>
+                <div class="member-info">
+                    <h3>Medhansh K</h3>
+                    <span class="role">CEO & Founder</span>
+                    <p>Former Data Science Lead, SIH 2024 FINALIST.</p>
+                    <div class="social-links">
+                        <a href="www.linkedin.com/in/medhansh-khedekar45" class="linkedin">LinkedIn</a>
+                        <a href="https://x.com/k_medhansh" class="twitter">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="images/team/generate-pics-for-guy-hackathon-character-with-fair-skin-color-and-medium-hair-and-stubble-beard-962662746.png" alt="John Smith">
+                </div>
+                <div class="member-info">
+                    <h3>Suyash Shinde</h3>
+                    <span class="role">DevOps Head</span>
+                    <p>Former DevOps Lead with 5+ years of experience in AWS and Containerization.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/suyash-shinde/" class="linkedin">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more team members with same structure -->
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="section-header">
+            <h2>Our Values</h2>
+            <p>Principles that guide our innovation</p>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <span class="icon">🎯</span>
+                <h3>Innovation First</h3>
+                <p>Continuously pushing boundaries in AI and data analytics</p>
+            </div>
+            <div class="value-card">
+                <span class="icon">🤝</span>
+                <h3>User Focused</h3>
+                <p>Building solutions that address real user needs</p>
+            </div>
+            <div class="value-card">
+                <span class="icon">⚡</span>
+                <h3>Excellence</h3>
+                <p>Delivering outstanding quality in everything we do</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include auth modals and footer from index.html -->
+    <!-- ... -->
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

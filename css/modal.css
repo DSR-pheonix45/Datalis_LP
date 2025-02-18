@@ -1,0 +1,105 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background: rgba(0, 0, 0, 0.95);
+    margin: 10% auto;
+    padding: 32px;
+    border: 1px solid rgba(173, 255, 47, 0.2);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.modal-title {
+    color: var(--text-light);
+    font-size: 24px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(173, 255, 47, 0.1);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--accent-green);
+}
+
+.error-message {
+    color: #ff4444;
+    font-size: 14px;
+    margin-top: 4px;
+    display: none;
+}
+
+.form-button {
+    width: 100%;
+    padding: 12px;
+    background: var(--accent-green);
+    color: var(--background-dark);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(173, 255, 47, 0.3);
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: var(--text-light);
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: var(--accent-green);
+}
+
+.form-switch {
+    text-align: center;
+    margin-top: 16px;
+    color: var(--text-light);
+}
+
+.form-switch a {
+    color: var(--accent-green);
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.form-switch a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datalis - Data Simplified</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="js/auth.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/email.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="/" class="logo-section">
+                <img src="images/Screenshot 2025-02-03 121416.png" alt="Datalis Logo" class="logo-image">
+            </a>
+
+            <div class="nav-center">
+                <a href="index.html" class="active">Home</a>
+                <a href="#enhanced-data-section">Features</a>
+                <a href="about.html">About</a>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-login" id="loginBtn">Log In</button>
+                <button class="btn btn-register" id="signupBtn">Register Now</button>
+            </div>
+        </div>
+    </nav>
+
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="loginClose">&times;</span>
+        <h2 class="modal-title">Welcome Back</h2>
+        <div class="input-group">
+            <input 
+                type="email" 
+                id="loginEmail" 
+                class="form-input"
+                placeholder="Email" 
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            >
+            <div id="loginEmailError" class="error-message"></div>
+        </div>
+        <div class="input-group">
+            <input 
+                type="password" 
+                id="loginPassword" 
+                class="form-input"
+                placeholder="Password" 
+                required
+                minlength="6"
+            >
+            <div id="loginPasswordError" class="error-message"></div>
+        </div>
+        <button class="form-button" id="submitLogin">Login</button>
+        <div class="form-switch">
+            Don't have an account?<a href="#" id="switchToSignup">Sign up</a>
+        </div>
+    </div>
+</div>
+
+<!-- Update Signup Modal -->
+<div id="signupModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="signupClose">&times;</span>
+        <h2 class="modal-title">Create Account</h2>
+        <div class="input-group">
+            <input 
+                type="text" 
+                id="signupName" 
+                class="form-input"
+                placeholder="Full Name" 
+                required
+                minlength="2"
+            >
+            <div id="nameError" class="error-message"></div>
+        </div>
+        <div class="input-group">
+            <input 
+                type="email" 
+                id="signupEmail" 
+                class="form-input"
+                placeholder="Email" 
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            >
+            <div id="emailError" class="error-message"></div>
+        </div>
+        <div class="input-group">
+            <input 
+                type="text" 
+                id="signupCompany" 
+                class="form-input"
+                placeholder="Company Name" 
+                required
+                minlength="2"
+            >
+            <div id="companyError" class="error-message"></div>
+        </div>
+        <div class="input-group">
+            <input 
+                type="password" 
+                id="signupPassword" 
+                class="form-input"
+                placeholder="Password (min. 6 characters)" 
+                required
+                minlength="6"
+            >
+            <div id="passwordError" class="error-message"></div>
+        </div>
+        <button class="form-button" id="submitSignup">Create Account</button>
+        <div class="form-switch">
+            Already have an account?<a href="#" id="switchToLogin">Log in</a>
+        </div>
+    </div>
+</div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <span class="gamified-tag">Gamified V1</span>
+        
+        <h1 class="hero-title">Data Simplified with DATALIS</h1>
+        
+        <p class="hero-description">
+            Datalis is a Data Intelligence Platform. From your Raw data Input 
+            till getting Insightful Reports and Detailed Visualizations
+        </p>
+
+        <div class="benefits">
+            <span class="benefit-item">No credit card required</span>
+            <span class="benefit-item">Quality Data Insights</span>
+        </div>
+    </section>
+
+    <!-- Floating Image Section -->
+    <section class="floating-image-section">
+        <img 
+            src="images/Screenshot 2025-02-16 125400.png"
+            alt="Datalis dashboard" 
+            class="floating-image"
+        >
+        <div class="image-overlay"></div>
+    </section>
+
+    <!-- Enhanced Data Operations Section -->
+    <section class="enhanced-data-section">
+        <div class="enhanced-data-header">
+            <span class="feature-tag">Crafted for Founders and Analysts</span>
+            <h2 class="section-title">Enhanced Data Operations</h2>
+        </div>
+        
+        <div class="features-grid">
+            <!-- Data Cleaning Card -->
+            <div class="feature-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 4L4 8L12 12L20 8L12 4Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M4 16L12 20L20 16" stroke="currentColor" stroke-width="2"/>
+                    <path d="M4 12L12 16L20 12" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <h3 class="feature-title">Data Cleaning</h3>
+                <p class="feature-description">We believe in pushing the boundaries of what's possible explore emerging technology</p>
+            </div>
+
+            <!-- Unified Ecosystem Card -->
+            <div class="feature-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 8V16M8 12H16" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <h3 class="feature-title">Unified ecosystem</h3>
+                <p class="feature-description">Enjoy a unified workspace by bringing together to all your favorite tools under one</p>
+            </div>
+
+            <!-- Data Transformation Card -->
+            <div class="feature-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 12H20M4 12L8 8M4 12L8 16" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <h3 class="feature-title">Data Transformation</h3>
+                <p class="feature-description">Knowing the cost of acquiring talent and right position is crucial.</p>
+            </div>
+
+            <!-- Concrete Security Card -->
+            <div class="feature-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3L20 7V11C20 15.4183 16.4183 19 12 19C7.58172 19 4 15.4183 4 11V7L12 3Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <h3 class="feature-title">Concrete Security</h3>
+                <p class="feature-description">Complete transaction environment works on tokens</p>
+            </div>
+
+            <!-- AI Insights Card -->
+            <div class="feature-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 4V20M4 12H20" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <h3 class="feature-title">AI Insights</h3>
+                <p class="feature-description">The Assessment roadmap helps to recruit quality and skilled interns</p>
+            </div>
+
+            <!-- Advanced Visualizations Card -->
+            <div class="feature-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 14H8V20H4V14Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M10 8H14V20H10V8Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M16 4H20V20H16V4Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <h3 class="feature-title">Advanced Visualizations</h3>
+                <p class="feature-description">We believe in pushing the boundaries and providing analysis of performance</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Replace the Floating Image Section with this new structure -->
+
+<!-- Data Processing Overview Section -->
+<section class="data-processing-section">
+    <div class="section-container">
+        <div class="content-left">
+            <span class="section-tag">Data Processing</span>
+            <h2 class="section-title">Transform Raw Data Into Actionable Insights</h2>
+            <p class="section-description">
+                Upload your data in any format and let our AI-powered platform handle the rest.
+                From cleaning to visualization, we've got you covered.
+            </p>
+            <div class="process-steps">
+                <div class="step">
+                    <span class="step-number">01</span>
+                    <span class="step-text">Upload Data</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">02</span>
+                    <span class="step-text">Auto Clean</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">03</span>
+                    <span class="step-text">Transform</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">04</span>
+                    <span class="step-text">Visualize</span>
+                </div>
+            </div>
+            <button class="cta-button">Start Free Trial</button>
+        </div>
+        <div class="content-right">
+            <img src="images/image.png" alt="Data Processing Dashboard" class="feature-image">
+        </div>
+    </div>
+</section>
+
+<!-- Data Visualization Section -->
+<section class="data-visualization-section">
+    <div class="section-container reverse">
+        <div class="content-left">
+            <span class="section-tag">Visualization</span>
+            <h2 class="section-title">Interactive Data Visualization</h2>
+            <p class="section-description">
+                Create stunning visualizations with just a few clicks. Our platform offers
+                multiple chart types and customization options.
+            </p>
+            <div class="feature-list">
+                <div class="feature">
+                    <svg class="feature-icon"><!-- Add your SVG here --></svg>
+                    <span>Real-time Charts</span>
+                </div>
+                <div class="feature">
+                    <svg class="feature-icon"><!-- Add your SVG here --></svg>
+                    <span>Custom Dashboards</span>
+                </div>
+                <div class="feature">
+                    <svg class="feature-icon"><!-- Add your SVG here --></svg>
+                    <span>Export Options</span>
+                </div>
+            </div>
+            <button class="cta-button">Explore Features</button>
+        </div>
+        <div class="content-right">
+            <img src="images/Screenshot 2025-02-16 180646.png" alt="Data Visualization" class="feature-image">
+        </div>
+    </div>
+</section>
+
+
+<!-- Security Section -->
+<section class="security-section">
+    <div class="section-container">
+        <div class="content-left">
+            <span class="section-tag">Enterprise Security</span>
+            <h2 class="section-title">Your Data, Secured</h2>
+            <p class="section-description">
+                Enterprise-grade security with end-to-end encryption, role-based access,
+                and compliance with industry standards.
+            </p>
+            <div class="security-features">
+                <div class="security-badge">
+                    <svg class="badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>ISO 27001 Certified</span>
+                </div>
+                <div class="security-badge">
+                    <svg class="badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>GDPR Compliant</span>
+                </div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+        <div class="content-right">
+            <img src="images/Untitled design (4).png" alt="Security Features" class="feature-image">
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+    <div class="testimonials-header">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">What Our Users Say</h2>
+        <p class="section-description">Trusted by data professionals worldwide</p>
+    </div>
+    
+    <div class="testimonials-carousel">
+        <div class="testimonial-track">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"Datalis has transformed how we handle our data analytics. The automated cleaning features save us hours of work."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>Sarah Johnson</h4>
+                        <p>Data Analyst, TechCorp</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"The visualization tools are incredible. We can create beautiful dashboards in minutes instead of hours."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>Michael Chen</h4>
+                        <p>BI Manager, DataFlow</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"Security features are top-notch. We feel confident handling sensitive data on Datalis."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>Emily Martinez</h4>
+                        <p>CTO, SecureData Inc</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"The AI-powered insights have helped us make better business decisions faster than ever before."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>David Kim</h4>
+                        <p>Analytics Lead, InnovateTech</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Update the testimonial cards structure -->
+    <div class="testimonial-card">
+    <div class="testimonial-content">
+        <p>"Datalis has transformed how we handle our data analytics. The automated cleaning features save us hours of work."</p>
+    </div>
+    <div class="testimonial-author">
+        <div class="author-info">
+            <h4>Sarah Johnson</h4>
+            <p>Data Analyst, TechCorp</p>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer-section">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/Screenshot 2025-02-03 121416.png" alt="Datalis Logo" class="footer-logo">
+                <p>Simplifying data operations for modern businesses</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Product</h4>
+                    <a href="#">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Security</a>
+                </div>
+                
+                <div class="link-column">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                </div>
+                
+                <div class="link-column">
+                    <h4>Resources</h4>
+                    <a href="#">Documentation</a>
+                    <a href="#">Support</a>
+                    <a href="#">API</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Datalis. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="#" aria-label="Twitter">Twitter</a>
+                <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                <a href="#" aria-label="GitHub">GitHub</a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
