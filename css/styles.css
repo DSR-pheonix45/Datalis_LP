@@ -1116,3 +1116,73 @@ color: var(--accent-green);
         justify-content: center;
     }
 }
+
+/* Media query for tablets */
+@media (max-width: 1024px) {
+    .nav-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-center {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .nav-container {
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .hero-section {
+        padding: 80px 16px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .team-grid,
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 16px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+}
