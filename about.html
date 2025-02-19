@@ -18,19 +18,118 @@
             <a href="/" class="logo-section">
                 <img src="images/Screenshot 2025-02-03 121416.png" alt="Datalis Logo" class="logo-image">
             </a>
-
-            <div class="nav-center">
-                <a href="index.html" class="active">Home</a>
-                <a href="index.html#Features">Features</a>
-                <a href="about.html">About</a>
-            </div>
-
-            <div class="action-buttons">
-                <button class="btn btn-login" id="loginBtn">Log In</button>
-                <button class="btn btn-register" id="signupBtn">Register Now</button>
+    
+            <!-- Add hamburger menu button -->
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+    
+            <!-- Add drawer-nav class -->
+            <div class="nav-drawer">
+                <div class="nav-center">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="index.html#Features">Features</a>
+                    <a href="about.html">About</a>
+                </div>
+    
+                <div class="action-buttons">
+                    <button class="btn btn-login" id="loginBtn">Log In</button>
+                    <button class="btn btn-register" id="signupBtn">Register Now</button>
+                </div>
             </div>
         </div>
     </nav>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="loginClose">&times;</span>
+            <h2 class="modal-title">Welcome Back</h2>
+            <div class="input-group">
+                <input 
+                    type="email" 
+                    id="loginEmail" 
+                    class="form-input"
+                    placeholder="Email" 
+                    required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                >
+                <div id="loginEmailError" class="error-message"></div>
+            </div>
+            <div class="input-group">
+                <input 
+                    type="password" 
+                    id="loginPassword" 
+                    class="form-input"
+                    placeholder="Password" 
+                    required
+                    minlength="6"
+                >
+                <div id="loginPasswordError" class="error-message"></div>
+            </div>
+            <button class="form-button" id="submitLogin">Login</button>
+            <div class="form-switch">
+                Don't have an account?<a href="#" id="switchToSignup">Sign up</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Update Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="signupClose">&times;</span>
+            <h2 class="modal-title">Create Account</h2>
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="signupName" 
+                    class="form-input"
+                    placeholder="Full Name" 
+                    required
+                    minlength="2"
+                >
+                <div id="nameError" class="error-message"></div>
+            </div>
+            <div class="input-group">
+                <input 
+                    type="email" 
+                    id="signupEmail" 
+                    class="form-input"
+                    placeholder="Email" 
+                    required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                >
+                <div id="emailError" class="error-message"></div>
+            </div>
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="signupCompany" 
+                    class="form-input"
+                    placeholder="Company Name" 
+                    required
+                    minlength="2"
+                >
+                <div id="companyError" class="error-message"></div>
+            </div>
+            <div class="input-group">
+                <input 
+                    type="password" 
+                    id="signupPassword" 
+                    class="form-input"
+                    placeholder="Password (min. 6 characters)" 
+                    required
+                    minlength="6"
+                >
+                <div id="passwordError" class="error-message"></div>
+            </div>
+            <button class="form-button" id="submitSignup">Create Account</button>
+            <div class="form-switch">
+                Already have an account?<a href="#" id="switchToLogin">Log in</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="about-hero">
@@ -142,9 +241,48 @@
         </div>
     </section>
 
-    <!-- Include auth modals and footer from index.html -->
-    <!-- ... -->
-
+<footer class="footer-section">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/Screenshot 2025-02-03 121416.png" alt="Datalis Logo" class="footer-logo">
+                <p>Simplifying data operations for modern businesses</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Product</h4>
+                    <a href="#">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Security</a>
+                </div>
+                
+                <div class="link-column">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                </div>
+                
+                <div class="link-column">
+                    <h4>Resources</h4>
+                    <a href="#">Documentation</a>
+                    <a href="#">Support</a>
+                    <a href="#">API</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Datalis. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="#" aria-label="Twitter">Twitter</a>
+                <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                <a href="#" aria-label="GitHub">GitHub</a>
+            </div>
+        </div>
+    </div>
+</footer>
     <script src="js/auth.js"></script>
 </body>
 </html>
